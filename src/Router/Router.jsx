@@ -9,59 +9,57 @@ import Cart from "../Page/Cart/Cart";
 import OrderDetails from "../Page/OrderDetails/OrderDetails";
 import Checkout from "../Page/Checkout/Checkout";
 import Search from "../Page/Search/Search";
-
+import Login from "../Pages/Login/Login";
 
 const Router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Layout />,
-        children: [
-           
-            {
-                path: '/course',
-                element: <Courses />
-            },
-            {
-                path: '/cart',
-                element: <Cart></Cart>
-            },
-            {
-                path: '/checkout',
-                element: <Checkout />
-            },
-            {
-                path: '/search',
-                element: <Search />
-            },
-            {
-                path : '/order-details',
-                element : <OrderDetails />
-            },
-
-           
-           
-        ]
-    },
-    {
-        path: 'admin-dashboard',
-        element: <Admin_Dashboard />,
-        children: [
-            {
-                path: 'general-setting',
-                element: <General_Setting />
-            },
-            {
-                path: 'user-list',
-                element: <User_List />
-            },
-            {
-                path: 'user-role',
-                element: <User_Role></User_Role>
-            }
-          
-        ]
-    }
-    
-])
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/course",
+        element: <Courses />,
+      },
+      {
+        path: "/cart",
+        element: <Cart></Cart>,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
+      },
+      {
+        path: "/order-details",
+        element: <OrderDetails />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+    ],
+  },
+  {
+    path: "admin-dashboard",
+    element: <Admin_Dashboard />,
+    children: [
+      {
+        path: "general-setting",
+        element: <General_Setting />,
+      },
+      {
+        path: "user-list",
+        element: <User_List />,
+      },
+      {
+        path: "user-role",
+        element: <User_Role></User_Role>,
+      },
+    ],
+  },
+]);
 
 export default Router;

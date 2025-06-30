@@ -11,12 +11,12 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const phone = e.target.phone.value;
+    const email = e.target.email.value;
     const password = e.target.password.value;
-    const info = { mobile: phone, password };
+    const info = { email, password };
 
     try {
-      const res = await axiosPublic.post("/api/login", info);
+      const res = await axiosPublic.post("/login", info);
       if (res.data) {
         toast.success(res.data.message);
         localStorage.setItem("token", res.data.access_token);
@@ -45,12 +45,12 @@ const Login = () => {
           <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
-                <span className="font-semibold">Phone *</span>
+                <span className="font-semibold">Email *</span>
               </label>
               <input
-                type="number"
-                placeholder="phone"
-                name="phone"
+                type="email"
+                placeholder="email"
+                name="email"
                 className="border h-12 bg-gray-100 focus:ring-0 px-4 focus:border w-full focus:outline-none"
                 required
               />
